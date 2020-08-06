@@ -1,0 +1,15 @@
+C:\Users\10206\git\Phase_3\Phase_3\bin\Debug\Phase_3.exe.config
+C:\Users\10206\git\Phase_3\Phase_3\bin\Debug\Phase_3.exe
+C:\Users\10206\git\Phase_3\Phase_3\bin\Debug\Phase_3.pdb
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.csprojAssemblyReference.cache
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\MainWindow.g.cs
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\App.g.cs
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3_MarkupCompile.cache
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3_MarkupCompile.lref
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\MainWindow.baml
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.g.resources
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.Properties.Resources.resources
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.csproj.GenerateResource.cache
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.csproj.CoreCompileInputs.cache
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.exe
+C:\Users\10206\git\Phase_3\Phase_3\obj\Debug\Phase_3.pdb
