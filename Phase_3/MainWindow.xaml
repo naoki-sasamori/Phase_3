@@ -5,28 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Phase_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="600">
+        Title="BindingTest" Height="350" Width="550">
+
+    <Window.Resources>
+        <local:ColorConverter x:Key="colorConverter" />
+        <Style x:Key="stackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="500" />
+            <Setter Property="Margin" Value="10,10,0 0" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="80" />
+        </Style>
+        <Style x:Key="textBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Margin" Value="30,0,0,0" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="sliderStyle" TargetType="Slider">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Minimum" Value="0" />
+            <Setter Property="Maximum" Value="255" />
+            <Setter Property="Margin" Value="30,0,0,0" />
+            <Setter Property="TickPlacement" Value="Both" />
+            <Setter Property="TickFrequency" Value="10" />
+            <Setter Property="SmallChange" Value="1" />
+            <Setter Property="LargeChange" Value="10" />
+            <Setter Property="IsSnapToTickEnabled" Value="True" />
+        </Style>
+    </Window.Resources>
     <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Height="50" Width="550" Margin="10,10,0,0" VerticalAlignment="Top">
-            <Label Height="30" Width="80" Content="Color Red："/>
-            <TextBox Margin="30,0,0,0" Height="30" Width="80" TextWrapping="Wrap" Text="" />
-            <Slider Name="sliderRed" Margin="30,0,0,0" Height="30" Width="300" Maximum="255" Minimum="0" TickPlacement="TopLeft" TickFrequency="10" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
+        <StackPanel Style="{StaticResource stackPanelStyle}">
+            <Label Content="Color Red：" Style="{StaticResource labelStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderRed, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <Slider Name="sliderRed" Style="{StaticResource sliderStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="50" Width="550" Margin="10,10,0,0" VerticalAlignment="Top">
-            <Label Height="30" Width="80" Content="Color Green："/>
-            <TextBox Margin="30,0,0,0" Height="30" Width="80" TextWrapping="Wrap" Text="" />
-            <Slider Name="sliderGreen" Margin="30,0,0,0" Height="30" Width="300" Maximum="255" Minimum="0" TickPlacement="TopLeft" TickFrequency="10" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
+        <StackPanel Style="{StaticResource stackPanelStyle}">
+            <Label Content="Color Green：" Style="{StaticResource labelStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderGreen, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <Slider Name="sliderGreen" Style="{StaticResource sliderStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="50" Width="550" Margin="10,10,0,0" VerticalAlignment="Top">
-            <Label Height="30" Width="80" Content="Color Blue："/>
-            <TextBox Margin="30,0,0,0" Height="30" Width="80" TextWrapping="Wrap" Text="" />
-            <Slider Name="sliderBlue" Margin="30,0,0,0" Height="30" Width="300" Maximum="255" Minimum="0" TickPlacement="TopLeft" TickFrequency="10" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
+        <StackPanel Style="{StaticResource stackPanelStyle}">
+            <Label Content="Color Blue：" Style="{StaticResource labelStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderBlue, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <Slider Name="sliderBlue" Style="{StaticResource sliderStyle}" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="100" Width="550" Margin="26,10,16,0" VerticalAlignment="Top">
-            <Rectangle Fill="#FFF4F4F5" Stroke="Black" Width="530"/>
+        <StackPanel Orientation="Horizontal" Height="100" Width="500" Margin="26,10,16,0" VerticalAlignment="Top">
+            <Rectangle Width="530" HorizontalAlignment="Center">
+                <Rectangle.Fill>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <MultiBinding Converter="{StaticResource colorConverter}">
+                                <MultiBinding.Bindings>
+                                    <Binding ElementName="sliderRed" Path="Value" />
+                                    <Binding ElementName="sliderGreen" Path="Value" />
+                                    <Binding ElementName="sliderBlue" Path="Value" />
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Rectangle.Fill>
+            </Rectangle>
         </StackPanel>
     </StackPanel>
-    
-    
-
 </Window>
