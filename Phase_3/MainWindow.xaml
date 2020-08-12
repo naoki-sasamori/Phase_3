@@ -12,7 +12,6 @@
         <Style x:Key="stackPanelStyle" TargetType="StackPanel">
             <Setter Property="Orientation" Value="Horizontal" />
             <Setter Property="Height" Value="50" />
-            <Setter Property="Width" Value="500" />
             <Setter Property="Margin" Value="10,10,0 0" />
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
@@ -42,21 +41,21 @@
     <StackPanel Orientation="Vertical">
         <StackPanel Style="{StaticResource stackPanelStyle}">
             <Label Content="Color Red：" Style="{StaticResource labelStyle}"/>
-            <TextBox Text="{Binding ElementName=sliderRed, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderRed, Path=Value, Mode=TwoWay}" Style="{StaticResource textBoxStyle}"/>
             <Slider Name="sliderRed" Style="{StaticResource sliderStyle}" />
         </StackPanel>
         <StackPanel Style="{StaticResource stackPanelStyle}">
             <Label Content="Color Green：" Style="{StaticResource labelStyle}"/>
-            <TextBox Text="{Binding ElementName=sliderGreen, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderGreen, Path=Value, Mode=TwoWay}" Style="{StaticResource textBoxStyle}"/>
             <Slider Name="sliderGreen" Style="{StaticResource sliderStyle}" />
         </StackPanel>
         <StackPanel Style="{StaticResource stackPanelStyle}">
             <Label Content="Color Blue：" Style="{StaticResource labelStyle}"/>
-            <TextBox Text="{Binding ElementName=sliderBlue, Path=Value}" Style="{StaticResource textBoxStyle}"/>
+            <TextBox Text="{Binding ElementName=sliderBlue, Path=Value, Mode=TwoWay}" Style="{StaticResource textBoxStyle}"/>
             <Slider Name="sliderBlue" Style="{StaticResource sliderStyle}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="100" Width="500" Margin="26,10,16,0" VerticalAlignment="Top">
-            <Rectangle Width="530" HorizontalAlignment="Center">
+            <Rectangle Width="500" HorizontalAlignment="Center">
                 <Rectangle.Fill>
                     <SolidColorBrush>
                         <SolidColorBrush.Color>
